@@ -1,0 +1,24 @@
+{
+  "name": "rta96-c",
+  "version": "1.0.0",
+  "description": "search engine violently powered ",
+  "homepage": "https://github.com/shamil-tp/rta96-c#readme",
+  "bugs": {
+    "url": "https://github.com/shamil-tp/rta96-c/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shamil-tp/rta96-c.git"
+  },
+  "license": "ISC",
+  "author": "shamil-tp,nadiya,mahira",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index"
+  },
+  "dependencies": {
+    "axios": "^1.13.5",
+    "node-arp": "^1.0.6"
+  }
+}
