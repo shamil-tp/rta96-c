@@ -2,7 +2,6 @@ const arp = require('node-arp');
 const iface = require('./subnetFetch')()
 
 const findIP = (i)=>new Promise((resolve,reject)=>{
-    // console.log("SCANNING IP...." + i)
     arp.getMAC(`${iface.subnet}.${i}`,(err,mac)=>{
         if(!err && mac){
             resolve(`${iface.subnet}.${i}`)
@@ -14,6 +13,7 @@ const findIP = (i)=>new Promise((resolve,reject)=>{
 })
 
 const scanIp = async function(){
+    console.time('T')
     let allScans = []
     for(let i=1;i<255;i++){
         allScans.push(findIP(i))
@@ -25,8 +25,10 @@ const scanIp = async function(){
     }catch(e){
         console.log(e)
     }
-    // console.log(foundIp)
+    console.log(foundIp)
+    console.timeEnd("T")
     return foundIp
 }
+scanIp()
 
 module.exports = scanIp
